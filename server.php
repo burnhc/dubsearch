@@ -1,7 +1,7 @@
 <?php
 
 $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
-socket_bind($sock, '0.0.0.0', 10019);
+socket_bind($sock, '0.0.0.0', 10010);
 
 for (;;) {
     socket_recvfrom($sock, $message, 1024, 0, $ip, $port);
