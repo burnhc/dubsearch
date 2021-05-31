@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Encode Sans', sans-serif;
+}
+
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.banner {
+  background-color: #4b2e83;
+  height: 140px;
+  width: 100%;
+  padding-left: 220px;
+  padding-top: 50px;
+  position: relative;
+  display: block;
+}
+
+.uw-patch {
+  display: block;
+  text-indent: -9999px;
+  width: 163px;
+  height: 90px;
+  background: url("https://www.washington.edu/static/home/wp-content/themes/uw-2014/assets/svg/uw-sprite.svg")
+    no-repeat 0 0 transparent;
+  position: absolute;
+  left: 40px;
+  top: 50px;
+  z-index: 1;
+  color: #fff;
+}
+
+.wordmark {
+  color: white;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.explore {
+  padding: .5em;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+p {
+  padding: .5em;
+  font-size: 20px;
+}
+
+form {
+  padding: .5em;
+}
+
+.submit-button {
+  padding: 8px 14px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  background-color: #b7a57a;
+  color: #575757;
+  border: none;
+}
+
+.query {
+  border-radius: 25px;
+  padding: 10px;
+  border: 2px solid #eee;
+  margin-right: 1em;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  width: 500px;
+}
+
+.query:focus {
+  outline: none;
+}
+
+main {
+  text-align: center;
+}
+
+.footer {
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  padding: 25px;
+}
+
+@media(max-width:992px) {
+  .wordmark {
+    font-size: 30px;
+  }
+}
+
+@media(max-width:768px) {
+  .wordmark {
+    font-size: 20px;
+  }
+
+  .query {
+    width: 350px;
+  }
+}
