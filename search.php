@@ -20,8 +20,10 @@ if (isset($_POST["search_string"]))
    $search_string = $_POST["search_string"];
    $qfile = fopen("query.py", "w");
 
+   
    $log_file = fopen("log.txt", "a");
-   $log_entry = $_SERVER["REMOTE_ADDR"] . "," . $search_string . date('m/d/Y h:i:s a', time()) . "\n";
+   date_default_timezone_set('America/Los_Angeles');
+   $log_entry = $_SERVER["REMOTE_ADDR"] . "," . $search_string . "," . date('m/d/Y h:i:s a', time()) . "\n";
 
    fwrite($log_file, $log_entry);
    fclose($log_file);
