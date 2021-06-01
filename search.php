@@ -101,7 +101,7 @@ if (isset($_POST["search_string"]))
 
    fclose($rec_file)
 
-   exec("/usr/bin/python3.6 recommendations.py > output")
+   exec("/usr/bin/python3.6 recommendations.py > output");
    sleep(2);
    $stream = fopen("output", "r");
 
