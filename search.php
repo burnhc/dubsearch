@@ -107,11 +107,9 @@ if (isset($_POST["search_string"]))
 
    $stream = fopen("recs", "r");
 
-   $line=fgets($stream);
    while(($line=fgets($stream))!=false) 
    {
-      $line = fgets($stream);
-      echo "<p><span class=\"searchterm\">People also searched for: </span><span class=\"keyword\">$line</span></p>\n";
+      echo "<p><span class=\"searchterm\">People also searched for: </span><span class=\"keyword\">$line</span></p>\n";      
    }
    
    fclose($stream);
