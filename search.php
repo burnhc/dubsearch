@@ -98,7 +98,7 @@ if (isset($_POST["search_string"]))
    fwrite($rec_file, "\t\t\t\tsimilar_queries.append(query)\n");
    fwrite($rec_file, "similar_queries = pd.Series(similar_queries)\n");
    fwrite($rec_file, "similar_queries = similar_queries.value_counts().index.tolist()\n");
-   fwrite($rec_file, "print(similar_queries[0:5])\n");
+   fwrite($rec_file, "for query in similar_queries[0:5]:\n\tprint(query)\n");
 
    fclose($rec_file);
 
