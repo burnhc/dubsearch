@@ -40,7 +40,7 @@ if (isset($_POST["search_string"]))
    $search_string = $_POST["search_string"];
    $qfile = fopen("query.py", "w");
 
-   echo "<p>You searched for: $search_string</p>\n";
+   echo "<p><span class=\"searchterm\">You searched for: </span><span class=\"keyword\">$search_string</span></p>\n";
 	 
    $log_file = fopen("log.txt", "a");
    date_default_timezone_set('America/Los_Angeles');

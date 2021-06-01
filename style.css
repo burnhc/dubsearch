@@ -104,6 +104,16 @@ main {
   padding-bottom: 10px;
 }
 
+.searchterm {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.keyword {
+  font-size: 25px;
+  font-weight: 500;
+}
+
 @media (max-width: 992px) {
   .wordmark {
     font-size: 30px;
