@@ -30,8 +30,9 @@
 		</form>
 
 		<div class="footer">2021 INFO 498B | Chandra Burnham, Alan Li, Danfeng Yang, Saatvik Arya, Louis Ta</div>
-	
+</main>
 
+<div class="results">
 <?php
 
 if (isset($_POST["search_string"]))
@@ -87,6 +88,7 @@ if (isset($_POST["search_string"]))
 }
 ?>
 
-</main>
+</div>
+
 </body>
 </html>
