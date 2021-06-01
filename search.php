@@ -16,8 +16,8 @@
 <body>
 	<div class="container-fluid">
 		<div class="banner">
-			<div class="uw-patch">University of Washington</div>
-			<div class="wordmark">UNIVESITY OF WASHINGTON</div>
+		<div class="uw-patch">University of Washington</div>
+			<div class="wordmark"><a href="http://searchrec.ischool.uw.edu/arya3/INFO498/search.php">UNIVERSITY OF WASHINGTON</a></div>
 		</div>
 	</div>
 	<main>
