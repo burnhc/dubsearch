@@ -69,20 +69,47 @@ if (isset($_POST["search_string"]))
 
    $line=fgets($stream);
 
-   while(($line=fgets($stream))!=false)
-   {
-	$clean_line = preg_replace('/\s+/',',',$line);
-	$record = explode("./", $clean_line);
-	$line = fgets($stream);
+   while(($line=fgets($stream))!=false) {
+      $clean_line = preg_replace('/\s+/',',',$line);
+      $record = explode("./", $clean_line);
+      $line = fgets($stream);
 
-	// replaced unnecessary characters in routes so that paths are valid
-	$fixed_url = preg_replace('/\/index/', '', $record[1]);
-	$fixed_url = preg_replace('/.html,/','', $fixed_url);
-	$fixed_url = preg_replace('/\/feed/', '', $fixed_url);
-	echo "<p><a href=\"http://$fixed_url\">".$line."</a></p>\n";
+      // replaced unnecessary characters in routes so that paths are valid
+      $fixed_url = preg_replace('/\/index/', '', $record[1]);
+      $fixed_url = preg_replace('/.html,/','', $fixed_url);
+      $fixed_url = preg_replace('/\/feed/', '', $fixed_url);
+      echo "<p><a href=\"http://$fixed_url\">".$line."</a></p>\n";
    }
 
    fclose($stream);
+   
+   $rec_file = fopen("recommendations.py", "w");
+   fwrite($rec_file, "import pandas as pd\n");
+   fwrite($rec_file, "log = pd.read_csv('log.txt', header=None, names=['ip', 'query', 'datetime'])\n");
+   fwrite($rec_file, "queries_by_user = log.groupby(['ip'])['query']\n");
+   fwrite($rec_file, "user_query = $search_string\n");
+   fwrite($rec_file, "similar_queries = []\n");
+   fwrite($rec_file, "for ip, queries in queries_by_user:\n");
+   fwrite($rec_file, "\tqueries = queries.unique()\n");
+   fwrite($rec_file, "\tif user_query in queries:\n");
+   fwrite($rec_file, "\t\tfor query in queries:\n");
+   fwrite($rec_file, "\t\t\tif query != user_query:\n");
+   fwrite($rec_file, "\t\t\t\tsimilar_queries.append(query)\n");
+   fwrite($rec_file, "similar_queries = pd.Series(similar_queries)\n");
+   fwrite($rec_file, "similar_queries = similar_queries.value_counts().index.tolist()\n");
+   fwrite($rec_file, "print(similar_queries[0:5])\n");
+
+   fclose($rec_file)
+
+   exec("/usr/bin/python3.6 recommendations.py > output")
+   sleep(2);
+   $stream = fopen("output", "r");
+
+   $line=fgets($stream);
+   echo "<p>"
+   while(($line=fgets($stream))!=false) {
+      echo "<span class=\"searchterm\">People also searched for: </span><span class=\"keyword\">$line</span></p>\n";
+   }
    
    exec("rm query.py");
    exec("rm output");
