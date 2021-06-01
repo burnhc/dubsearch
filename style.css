@@ -3,6 +3,10 @@
   font-family: "Encode Sans", sans-serif;
 }
 
+body {
+  margin-bottom: 100px;
+}
+
 .container-fluid {
   padding-right: 0px !important;
   padding-left: 0px !important;
