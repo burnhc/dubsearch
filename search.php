@@ -86,7 +86,7 @@ if (isset($_POST["search_string"]))
    
    $rec_file = fopen("recommendations.py", "w");
    fwrite($rec_file, "import pandas as pd\n");
-   fwrite($rec_file, "log = pd.read_csv('log.txt', header=None, names=[\"ip\", \"query\", \"datetime\"])\n");
+   fwrite($rec_file, "log = pd.read_csv(\"log.txt\", header=None, names=[\"ip\", \"query\", \"datetime\"])\n");
    fwrite($rec_file, "queries_by_user = log.groupby([\"ip\"])[\"query\"]\n");
    fwrite($rec_file, "user_query = \"$search_string\"\n");
    fwrite($rec_file, "similar_queries = []\n");
@@ -101,7 +101,7 @@ if (isset($_POST["search_string"]))
    fwrite($rec_file, "print(similar_queries[0:5])\n");
 
    fclose($rec_file);
-   
+
    $stream = fopen("recs", "r");
 
    $line=fgets($stream);
@@ -113,7 +113,7 @@ if (isset($_POST["search_string"]))
    
    fclose($stream);
 
-   exec("rm recommendations.py")
+   exec("rm recommendations.py");
    exec("rm query.py");
    exec("rm output");
    exec("rm recs");
