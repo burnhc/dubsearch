@@ -101,9 +101,7 @@ if (isset($_POST["search_string"]))
    fwrite($rec_file, "print(similar_queries[0:5])\n");
 
    fclose($rec_file);
-
-   shell_exec("/usr/bin/python3.6 recommendations.py > recs");
-   sleep(2);
+   
    $stream = fopen("recs", "r");
 
    $line=fgets($stream);
