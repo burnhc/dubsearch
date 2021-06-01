@@ -62,8 +62,38 @@ if (isset($_POST["search_string"]))
    
    fclose($qfile);
 
+   $rec_file = fopen("recommendations.py", "w");
+   fwrite($rec_file, "import pandas as pd\n");
+   fwrite($rec_file, "log = pd.read_csv(\"log.txt\", header=None, names=[\"ip\", \"query\", \"datetime\"])\n");
+   fwrite($rec_file, "queries_by_user = log.groupby([\"ip\"])[\"query\"]\n");
+   fwrite($rec_file, "user_query = \"$search_string\"\n");
+   fwrite($rec_file, "similar_queries = []\n");
+   fwrite($rec_file, "for ip, queries in queries_by_user:\n");
+   fwrite($rec_file, "\tqueries = queries.unique()\n");
+   fwrite($rec_file, "\tif user_query in queries:\n");
+   fwrite($rec_file, "\t\tfor query in queries:\n");
+   fwrite($rec_file, "\t\t\tif query != user_query:\n");
+   fwrite($rec_file, "\t\t\t\tsimilar_queries.append(query)\n");
+   fwrite($rec_file, "similar_queries = pd.Series(similar_queries)\n");
+   fwrite($rec_file, "similar_queries = similar_queries.value_counts().index.tolist()\n");
+   fwrite($rec_file, "for query in similar_queries[0:3]:\n\tprint(query)\n");
+
+   fclose($rec_file);
+
    exec("ls | nc -u 127.0.0.1 10010");
    sleep(3);
+
+   shell_exec("/usr/bin/python3.6 recommendations.py > recs");
+   sleep(3);
+
+   $stream = fopen("recs", "r");
+   echo "<p><span class=\"searchterm\">People also searched for: </span>";
+   while(($line=fgets($stream))!=false) 
+   {
+      echo "<span class=\"keyword\">$line | </span>";      
+   }
+   echo "</p>\n";
+   fclose($stream);
 
    $stream = fopen("output", "r");
 
@@ -84,36 +114,6 @@ if (isset($_POST["search_string"]))
 
    fclose($stream);
    
-   $rec_file = fopen("recommendations.py", "w");
-   fwrite($rec_file, "import pandas as pd\n");
-   fwrite($rec_file, "log = pd.read_csv(\"log.txt\", header=None, names=[\"ip\", \"query\", \"datetime\"])\n");
-   fwrite($rec_file, "queries_by_user = log.groupby([\"ip\"])[\"query\"]\n");
-   fwrite($rec_file, "user_query = \"$search_string\"\n");
-   fwrite($rec_file, "similar_queries = []\n");
-   fwrite($rec_file, "for ip, queries in queries_by_user:\n");
-   fwrite($rec_file, "\tqueries = queries.unique()\n");
-   fwrite($rec_file, "\tif user_query in queries:\n");
-   fwrite($rec_file, "\t\tfor query in queries:\n");
-   fwrite($rec_file, "\t\t\tif query != user_query:\n");
-   fwrite($rec_file, "\t\t\t\tsimilar_queries.append(query)\n");
-   fwrite($rec_file, "similar_queries = pd.Series(similar_queries)\n");
-   fwrite($rec_file, "similar_queries = similar_queries.value_counts().index.tolist()\n");
-   fwrite($rec_file, "for query in similar_queries[0:5]:\n\tprint(query)\n");
-
-   fclose($rec_file);
-
-   shell_exec("/usr/bin/python3.6 recommendations.py > recs");
-   sleep(3);
-
-   $stream = fopen("recs", "r");
-   echo "<p><span class=\"searchterm\">People also searched for: </span>";
-   while(($line=fgets($stream))!=false) 
-   {
-      echo "<span class=\"keyword\">$line</span>";      
-   }
-   echo "</p>\n";
-   fclose($stream);
-
    exec("rm recommendations.py");
    exec("rm query.py");
    exec("rm output");
