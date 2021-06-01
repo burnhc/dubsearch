@@ -86,9 +86,9 @@ if (isset($_POST["search_string"]))
    
    $rec_file = fopen("recommendations.py", "w");
    fwrite($rec_file, "import pandas as pd\n");
-   fwrite($rec_file, "log = pd.read_csv('log.txt', header=None, names=['ip', 'query', 'datetime'])\n");
-   fwrite($rec_file, "queries_by_user = log.groupby(['ip'])['query']\n");
-   fwrite($rec_file, "user_query = $search_string\n");
+   fwrite($rec_file, "log = pd.read_csv('log.txt', header=None, names=[\"ip\", \"query\", \"datetime\"])\n");
+   fwrite($rec_file, "queries_by_user = log.groupby([\"ip\"])[\"query\"]\n");
+   fwrite($rec_file, "user_query = \"$search_string\"\n");
    fwrite($rec_file, "similar_queries = []\n");
    fwrite($rec_file, "for ip, queries in queries_by_user:\n");
    fwrite($rec_file, "\tqueries = queries.unique()\n");
@@ -100,11 +100,11 @@ if (isset($_POST["search_string"]))
    fwrite($rec_file, "similar_queries = similar_queries.value_counts().index.tolist()\n");
    fwrite($rec_file, "print(similar_queries[0:5])\n");
 
-   fclose($rec_file)
+   fclose($rec_file);
 
-   exec("/usr/bin/python3.6 recommendations.py > output");
+   shell_exec("/usr/bin/python3.6 recommendations.py > recs");
    sleep(2);
-   $stream = fopen("output", "r");
+   $stream = fopen("recs", "r");
 
    $line=fgets($stream);
    while(($line=fgets($stream))!=false) 
@@ -118,6 +118,7 @@ if (isset($_POST["search_string"]))
    exec("rm recommendations.py")
    exec("rm query.py");
    exec("rm output");
+   exec("rm recs");
 }
 ?>
 
