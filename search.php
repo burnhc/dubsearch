@@ -106,11 +106,13 @@ if (isset($_POST["search_string"]))
    $stream = fopen("output", "r");
 
    $line=fgets($stream);
-   echo "<p>"
    while(($line=fgets($stream))!=false) {
-      echo "<span class=\"searchterm\">People also searched for: </span><span class=\"keyword\">$line</span></p>\n";
+      echo "<p><span class=\"searchterm\">People also searched for: </span><span class=\"keyword\">$line</span></p>\n";
    }
    
+   fclose($stream);
+   
+   exec("rm recommendations.py")
    exec("rm query.py");
    exec("rm output");
 }
