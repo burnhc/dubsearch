@@ -69,7 +69,8 @@ if (isset($_POST["search_string"]))
 
    $line=fgets($stream);
 
-   while(($line=fgets($stream))!=false) {
+   while(($line=fgets($stream))!=false) 
+   {
       $clean_line = preg_replace('/\s+/',',',$line);
       $record = explode("./", $clean_line);
       $line = fgets($stream);
@@ -106,12 +107,14 @@ if (isset($_POST["search_string"]))
    $stream = fopen("output", "r");
 
    $line=fgets($stream);
-   while(($line=fgets($stream))!=false) {
+   while(($line=fgets($stream))!=false) 
+   {
+      $line = fgets($stream);
       echo "<p><span class=\"searchterm\">People also searched for: </span><span class=\"keyword\">$line</span></p>\n";
    }
    
    fclose($stream);
-   
+
    exec("rm recommendations.py")
    exec("rm query.py");
    exec("rm output");
