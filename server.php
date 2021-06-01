@@ -7,7 +7,6 @@ for (;;) {
     socket_recvfrom($sock, $message, 1024, 0, $ip, $port);
     echo "Got a request...\n";
     $reply = shell_exec("/usr/bin/python3.6 query.py > output");
-    $reply = shell_exec("/usr/bin/python3.6 recommendations.py > recs");
     socket_sendto($sock, $reply, strlen($reply), 0, $ip, $port);
 }
 ?>

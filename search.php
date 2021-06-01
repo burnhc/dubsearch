@@ -102,6 +102,9 @@ if (isset($_POST["search_string"]))
 
    fclose($rec_file);
 
+   shell_exec("/usr/bin/python3.6 recommendations.py > recs");
+   sleep(3);
+
    $stream = fopen("recs", "r");
 
    $line=fgets($stream);
