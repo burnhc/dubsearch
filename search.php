@@ -21,9 +21,9 @@ if (isset($_POST["search_string"]))
    $qfile = fopen("query.py", "w");
 
    $log_file = fopen("log.txt" "w");
-   $log_entry = $_SERVER["REMOTE_ADDR"] . "," . $search_string . "\n";
-
+   $log_entry = $_SERVER['REMOTE_ADDR'] . "," . $search_string . "\n";
    fwrite($log_file, $log_entry);
+   fclose($log_file);
 
    fwrite($qfile, "import pyterrier as pt\nif not pt.started():\n\tpt.init()\n\n");
    fwrite($qfile, "import pandas as pd\nqueries = pd.DataFrame([[\"q1\", \"$search_string\"]], columns=[\"qid\",\"query\"])\n");
@@ -36,7 +36,6 @@ if (isset($_POST["search_string"]))
       fwrite($qfile, "print(index.getMetaIndex().getItem(\"title\",tf_idf.transform(queries).docid[$i]))\n");
    }
    
-   fclose($log_file);
    fclose($qfile);
 
    exec("ls | nc -u 127.0.0.1 10010");
