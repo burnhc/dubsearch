@@ -1,12 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: 'Encode Sans', sans-serif;
-}
-
-a {
-  margin: 20px;
-  padding: 1em;
-  font-size: 20px;
+  font-family: "Encode Sans", sans-serif;
 }
 
 .container-fluid {
@@ -45,24 +39,24 @@ a {
 }
 
 .explore {
-  padding: .5em;
+  padding: 0.5em;
   font-size: 30px;
   font-weight: 700;
 }
 
 p {
-  padding: .5em;
+  padding: 0.5em;
   font-size: 20px;
 }
 
 form {
-  padding: .5em;
+  padding: 0.5em;
 }
 
 .submit-button {
   padding: 8px 14px;
   font-weight: 600;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   background-color: #b7a57a;
   color: #575757;
   border: none;
@@ -73,7 +67,7 @@ form {
   padding: 10px;
   border: 2px solid #eee;
   margin-right: 1em;
-  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   width: 500px;
 }
 
@@ -96,13 +90,23 @@ main {
   z-index: 9999;
 }
 
-@media(max-width:992px) {
+.results {
+  margin: 20px;
+  padding: 1em;
+  font-size: 20px;
+}
+
+.link {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 992px) {
   .wordmark {
     font-size: 30px;
   }
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .wordmark {
     font-size: 20px;
   }

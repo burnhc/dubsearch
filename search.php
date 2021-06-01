@@ -77,7 +77,7 @@ if (isset($_POST["search_string"]))
 	$fixed_url = preg_replace('/\/index/', '', $record[1]);
 	$fixed_url = preg_replace('/.html,/','', $fixed_url);
 	$fixed_url = preg_replace('/\/feed/', '', $fixed_url);
-	echo "<a href=\"http://$fixed_url\">".$line."</a><br/>\n";
+	echo "<p><a href=\"http://$fixed_url\">".$line."</a></p>\n";
    }
 
    fclose($stream);
