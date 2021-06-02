@@ -1,0 +1,324 @@
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 6
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 21, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[6]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 6
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 6
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 21, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[6]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 6
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 6
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 21, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[6]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 6
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 3
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 15, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[3]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 3
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 1
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 11, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[1]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 1
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 13, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[2]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 2
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 6
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 21, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[6]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 6
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+/usr/bin/python3.6: can't open file 'query.py': [Errno 2] No such file or directory
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Traceback (most recent call last):
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1032, in pandas._libs.hashtable.Int64HashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1039, in pandas._libs.hashtable.Int64HashTable.get_item
+KeyError: 6
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "query.py", line 21, in <module>
+    print(index.getMetaIndex().getItem("filename",tf_idf.transform(queries).docid[6]))
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 882, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/series.py", line 990, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib64/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 6
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
+Got a request...
+No etc/terrier.properties, using terrier.default.properties for bootstrap configuration.
