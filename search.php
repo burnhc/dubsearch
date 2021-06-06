@@ -8,39 +8,44 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
 		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&amp;display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-	<title>UW Search and Recommender System</title>
+	<title>DubSearch</title>
 </head>
 
 <body>
 	<div class="container-fluid">
 		<div class="banner">
 		<div class="uw-patch">University of Washington</div>
-			<div class="wordmark"><a href="http://searchrec.ischool.uw.edu/arya3/INFO498/search.php">UNIVERSITY OF WASHINGTON</a></div>
+			<div class="wordmark"><a href="http://searchrec.ischool.uw.edu/arya3/INFO498">UNIVERSITY OF WASHINGTON</a></div>
 		</div>
 	</div>
 	<main>
-		<div class="explore">Explore the University of Washington Collection</div>
-		<p>Search for University of Washington documents in this collection.</p>
-		<p>Try these queries: 'ischool', 'coronavirus', 'alumni', 'technology'</p>
-		<form action="search.php" method="post">
-			<input class="query" type="text" size=40 name="search_string" value=""/>
+		<div class="explore">DubSearch</div>
+		<form id="query-form" action="search.php" method="post">
+			<input id="query" class="query" type="text" size=40 name="search_string" placeholder="Search..." value=""/>
 			<input class="submit-button" type="submit" value="SEARCH" />
 		</form>
 
-		<div class="footer">2021 INFO 498B | Chandra Burnham, Alan Li, Danfeng Yang, Saatvik Arya, Louis Ta</div>
-</main>
+<script>
+function searchFromSuggestion(query) {
+	const input = document.getElementById("query");
+	input.value = query;
+	document.getElementById("query-form").submit();
+};
+</script>
+
 
 <div class="results">
 <?php
 
 if (isset($_POST["search_string"]))
 {
-   $search_string = $_POST["search_string"];
+   $search_string = trim($_POST["search_string"]);
    $qfile = fopen("query.py", "w");
 
-   echo "<p><span class=\"searchterm\">You searched for: </span><span class=\"keyword\">$search_string</span></p>\n";
+   echo "<p><span class=\"searchterm\">You searched for: </span><span class=\"keyword\" onclick=\"searchFromSuggestion('$search_string')\">\"$search_string\"</span></p>\n";
 	 
    $log_file = fopen("log.txt", "a");
    date_default_timezone_set('America/Los_Angeles');
@@ -90,7 +95,8 @@ if (isset($_POST["search_string"]))
    echo "<p><span class=\"searchterm\">People also searched for: </span>";
    while(($line=fgets($stream))!=false) 
    {
-      echo "<span class=\"keyword\">$line | </span>";      
+      $term = trim($line);
+      echo "<span class=\"keyword\" onclick=\"searchFromSuggestion('$term')\">\"$term\"  </span>";      
    }
    echo "</p>\n";
    fclose($stream);
@@ -122,6 +128,16 @@ if (isset($_POST["search_string"]))
 ?>
 
 </div>
+</main>
+<div class="footer"> 
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+	<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+	</a>
+	<br>This work is licensed under a 
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+		Creative Commons Attribution-NonCommercial 4.0 International License.</a>	
+</div>
+
 
 </body>
 </html>

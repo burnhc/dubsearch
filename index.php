@@ -51,7 +51,7 @@ function randomSearch() {
 			 'policy', 'research', 'seattle',
 			 'engineering', 'boundless', 'chirag shah'];
 	const randomQuery = queries[Math.floor(Math.random() * queries.length)];
-	input = document.getElementById("queryInput");
+	const input = document.getElementById("queryInput");
 	input.value = randomQuery;
 	document.getElementById("queryForm").submit();
 }	
